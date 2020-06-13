@@ -12,7 +12,7 @@ c) This would be O(2n) Exponential. It is a recursive return that runs more than
 
 ## Exercise II
 
-### I would use a binary search alogorithm. 
+### I would use a binary search algorithm. 
 - Take the total number of floors and find half. 
 - Drop and egg and see if it breaks. 
 - If it does then take the lower half and find half there. 

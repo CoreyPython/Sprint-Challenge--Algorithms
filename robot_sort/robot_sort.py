@@ -92,12 +92,38 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+    # Robot light is a bool.
+
     def sort(self):
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+
+        self.set_light_on() # turn the robot's light to start loop.
+
+        while self.light_is_on():
+            self.set_light_off() # turn the light off so the robot can move
+
+            while self.can_move_right():
+                self.move_right() # move right and compare items
+
+                if self.compare_item() == 1: # Checking to see if the item is more
+                    self.swap_item()
+                    self.set_light_on()
+
+            while self.can_move_left():
+                self.swap_item()
+                self.move_left()
+
+                if self.compare_item() == -1: # Checking to see if the item is less
+                    self.swap_item()
+                    self.set_light_on()
+
+                self.move_right()
+                self.swap_item()
+                self.move_left()
+
+
 
 
 if __name__ == "__main__":
